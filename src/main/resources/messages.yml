@@ -1,0 +1,45 @@
+# RGB is supported on 1.16+
+# How to use: hex #ABCDEF -> &x&A&B&C&D&E&F
+message:
+  announcement:
+    answer: '&a&lGames &8&l>> &7No one won the game! The answer was: &e%answer%'
+    game-over: '&a&lGames &8&l>> &7The Chat Games have ended.'
+    no-players: '&a&lGames &8&l>> &7Not enough players are currently online &e(%online%/%required%)&7.'
+    win-time: '&a&lGames &8&l>> &7Time: &e%time% seconds'
+    win: '&a&lGames &8&l>> &e%player% &7has won the game!'
+  command:
+    current:
+      answer: '&fAnswer: &7&o''%answer%&7&o'''
+      header: '&eCurrent question:'
+      no-game: '&cNo game is currently active.'
+      question: '&fQuestion: &7&o''%question%&7&o'''
+      time: '&fStarted: &7&o%time% seconds ago'
+    leaderboard:
+      empty: '&cNo scores yet.'
+      entry: '&3%place%&8 >> &b%name% - %score%'
+      loading: '&eLoading leaderboard...'
+    list:
+      entry: '&f - &7&o%entry%'
+      header: '&eLoaded question generators:'
+    generic:
+      disabled: 'disabled'
+      enabled: 'enabled'
+      no-permission: '&cNo permission.'
+      not-a-player: '&cYou must be a player to do this.'
+      unknown-player: '&7%player% &cis not a known player.'
+    reload:
+      fail: '&cAn error occurred while reloading. Check console.'
+      success: '&7Reloaded successfully.'
+    reset:
+      all: '&7Resetting leaderboard...'
+      player: '&7Resetting leaderboard score for &e%player%&7...'
+    skip: '&7Skipped to the next question.'
+    toggle: '&7Chat games &e%state%&7.'
+    version: '&a&lGames &8&l>> &7ChatGames version &e%version% &7by &e%author%&7.'
+  game:
+    alphabet: '&a&lGames &8&l>> &7Give the &e%question% &7letter in the alphabet to get rewards!'
+    arithmetic: '&a&lGames &8&l>> &7Solve &e%question% &7to get rewards!'
+    copy: '&a&lGames &8&l>> &7Copy &e%question% &7to get rewards!'
+    decode: '&a&lGames &8&l>> &7Decode &e%question% &7to get rewards!'
+    trivia: '&a&lGames &8&l>> &7%question%'
+  win: '&a&lGames &8&l>> &7You won!'

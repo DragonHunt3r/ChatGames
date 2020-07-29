@@ -1,0 +1,29 @@
+# Amount of players needed for a chat game.
+required-players: -1
+
+# Default rewards
+reward-default:
+  enabled: true
+  money: 10000 # Requires Vault
+  commands:
+    - 'give %player% minecraft:diamond 3'
+
+# Enable/disable default question types
+enable-alphabet: true
+enable-copy: true
+enable-maths: true
+enable-maths-difficult: true
+enable-scramble: true
+enable-trivia: true
+
+# Time between games (in seconds). This should be more than the answer-time
+game-delay: 300
+
+# Time players have to answer (in seconds). This should be less than the game-delay
+answer-time: 120
+
+# How long the random sequences are (Default question generator)
+charsequence-length: 10
+
+# Script engine to use
+js-engine: JavaScript

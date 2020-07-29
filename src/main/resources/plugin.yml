@@ -1,0 +1,25 @@
+name: ChatGames
+version: 10.0
+main: net.steelphoenix.chatgames.ChatGames
+description: Interactive chat games
+prefix: ChatGames
+author: DragonHunter
+softdepend: [Vault]
+api-version: 1.13
+commands:
+  chatgames:
+    aliases: [cg]
+    description: Core command for chatgames.
+permissions:
+  chatgames.admin:
+    description: Gives access to most of the /chatgames subcommands.
+    default: op
+  chatgames.admin.relaod:
+    description: Gives access to /chatgames reload.
+    default: false
+  chatgames.admin.reset:
+    description: Gives access to /chatgames reset [player].
+    default: false
+  chatgames.leaderboard:
+    description: Gives access to /chatgames leaderboard.
+    default: true
