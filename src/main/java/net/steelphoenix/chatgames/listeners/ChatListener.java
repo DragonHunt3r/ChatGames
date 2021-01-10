@@ -43,17 +43,21 @@ public class ChatListener implements Listener {
 		// Increment the player's score
 		plugin.getLeaderboard().increment(player.getUniqueId());
 
-		// Broadcast the win
-		((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_WIN.replace("%player%", player.getName()));
-		((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_TIME.replace("%time%", time));
+		// Schedule the messages for the next tick, so the player's chat message comes before the win broadcast
+        plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, () -> {
 
-		// Event calling
-		AsyncChatGameWinEvent gameEvent = new AsyncChatGameWinEvent(game, player, message, answertime);
-		plugin.getServer().getPluginManager().callEvent(gameEvent);
+		    // Broadcast the win
+		    ((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_WIN.replace("%player%", player.getName()));
+		    ((ChatGames) plugin).broadcast(Message.ANNOUNCEMENT_TIME.replace("%time%", time));
 
-		// Send the winning player a message if defined
-		if (gameEvent.getWinMessage() != null) {
-			player.sendMessage(Util.color(gameEvent.getWinMessage()));
-		}
+		    // Event calling
+		    AsyncChatGameWinEvent gameEvent = new AsyncChatGameWinEvent(game, player, message, answertime);
+		    plugin.getServer().getPluginManager().callEvent(gameEvent);
+
+		    // Send the winning player a message if defined
+		    if (gameEvent.getWinMessage() != null) {
+		    	player.sendMessage(Util.color(gameEvent.getWinMessage()));
+		    }
+	    }, 1L);
 	}
 }
