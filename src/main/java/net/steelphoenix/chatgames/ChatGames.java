@@ -43,7 +43,7 @@ import net.steelphoenix.core.util.Validate;
 
 public class ChatGames extends JavaPlugin implements ICGPlugin {
 	private final Set<UUID> exempt =  new HashSet<>();
-	private final ScriptEngineManager manager = new ScriptEngineManager();
+	private final ScriptEngineManager manager = new ScriptEngineManager(null);
 	private IConfig config;
 	private IGameTask task;
 	private IDatabase db;
